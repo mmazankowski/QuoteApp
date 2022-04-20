@@ -2,26 +2,38 @@
     ViewData["Title"] = "Quotes";
 }
 
-@model QuotesViewModel 
+@model List<Quote>
 
-<div class="text-center">
-    <h1 class="display-4">Quotes</h1>
-</div>
+<h1 class="text-center">Quotes</h1>
+<br />
 
-@*<div class="text-left">
-    @foreach (Quote q in Model.Quotes)
-    {
-        <h3>@q.TheQuote</h3>
+<table class="table table-bordered table-striped">
 
-        <ul>
-            <li>Author: @q.Author</li>
-            <li>Date: @q.Date</li>
-            <li>Subject: @q.Subject</li>
-            <li>Citation: @q.Citation</li>
-        </ul>
+    <thead class="font-weight-bold">
+        <tr>
+            <td>Quote</td>
+            <td>Author</td>
+            <td>Date</td>
+            <td>Subject</td>
+            <td>Citation</td>
+        </tr>
+    </thead>
 
-        <br />
-    }
-</div>*@
+    <tbody>
+        @foreach (var q in Model)
+        {
+            <tr>
+                <td>@q.TheQuote</td>
+                <td>@q.Author</td>
+                <td>@q.Date</td>
+                <td>@q.Subject</td>
+                <td>@q.Citation</td>
+       
 
-@*<div page-blah="@Model.PageInfo" page-action="Index"></div>*@
+                <td><a asp-controller="Home" asp-action="Edit" asp-route-quoteid="@q.QuoteId">Edit</a></td>
+                <td><a asp-controller="Home" asp-action="Delete" asp-route-quoteid="@q.QuoteId">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
