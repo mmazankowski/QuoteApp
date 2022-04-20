@@ -30,6 +30,18 @@ namespace QuoteApp.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult QuoteForm()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult QuoteForm(Quote q)
+        {
+            return View("Confirmation");
+        }
+
         public IActionResult Privacy()
         {
             return View();

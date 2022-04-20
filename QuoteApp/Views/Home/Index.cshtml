@@ -1,8 +1,27 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Quotes";
 }
 
+@model QuotesViewModel 
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Quotes</h1>
 </div>
+
+@*<div class="text-left">
+    @foreach (Quote q in Model.Quotes)
+    {
+        <h3>@q.TheQuote</h3>
+
+        <ul>
+            <li>Author: @q.Author</li>
+            <li>Date: @q.Date</li>
+            <li>Subject: @q.Subject</li>
+            <li>Citation: @q.Citation</li>
+        </ul>
+
+        <br />
+    }
+</div>*@
+
+@*<div page-blah="@Model.PageInfo" page-action="Index"></div>*@
